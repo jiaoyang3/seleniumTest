@@ -36,16 +36,16 @@ class SouGouWeiXinTestCase(unittest.TestCase):
         titles = self.browser.find_elements_by_xpath('//*[@id="topwords"]/li')
 
         # 搜索热词
-        # data = {'type':2, 'ie':'utf8', 's_from':'hotnews'}
-        # for title in titles:
-        #     print(title.text)
-        #
-        #     hot_url = title.find_element_by_xpath('//a').get_attribute('href')
-        #     print(hot_url)
-        #
-        #     data['query'] = title.text
-        #     new_url = url + 'weixin?' + parse.urlencode(data)
-        #     print(new_url)
+        data = {'type':2, 'ie':'utf8', 's_from':'hotnews'}
+        for title in titles:
+            print(title.text)
+
+            hot_url = title.find_element_by_xpath('//a').get_attribute('href')
+            print(hot_url)
+
+            data['query'] = title.text
+            new_url = url + 'weixin?' + parse.urlencode(data)
+            print(new_url)
 
         # 热门
         articles = self.browser.find_elements_by_xpath('//*[@id="pc_0_0"]/li')
